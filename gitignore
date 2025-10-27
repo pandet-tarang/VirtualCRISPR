@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data files (too large for git)
+data/embeddings/*.npy
+data/summaries/*.csv
+data/summaries/*.xlsx
+data/screens/*.txt
+data/genomes/*.tsv
+
+# Keep folder structure
+!data/embeddings/.gitkeep
+!data/summaries/.gitkeep
+!data/terms/.gitkeep
+!data/genomes/.gitkeep
+!data/screens/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# HuggingFace cache
+.cache/
+cache/
+
+# Gradio
+gradio_cached_examples/
