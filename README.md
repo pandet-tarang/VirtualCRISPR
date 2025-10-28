@@ -196,7 +196,7 @@ What genes are essential for cell cycle progression?
 
 ```
 VirtualCRISPR/
-├── scripts/
+├── py_scripts/
     ├── app.py                      # Main application
     ├── save_embeddings.py          # Generate embeddings (run once)
     ├── evaluate.py                 # Test model accuracy
