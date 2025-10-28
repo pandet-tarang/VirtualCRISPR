@@ -31,12 +31,12 @@ pip install -r requirements.txt
 pip install tf-keras
 ```
 
-### 2. Generate Embeddings (Run Once - 30-60 min)
+### 2. Generate Embeddings (Run Once - 30-60 min; Not Required)
 ```bash
 python save_embeddings.py
 ```
 
-This creates embeddings for all your data. **Run this once**, then app loads in 30 seconds!
+This creates embeddings for all your data. 
 
 ### 3. Run the App
 ```bash
@@ -78,9 +78,7 @@ Opens at http://localhost:7860
 
 | Scenario | Time |
 |----------|------|
-| **First run (with save_embeddings.py)** | **30 sec** ⚡ |
-| First run (without embeddings) | 1-2 hours 🐌 |
-| Subsequent runs | 30 sec |
+| Run | ~10 minutes |
 
 ### Query Response:
 - Search: 0.5-1 sec
@@ -120,7 +118,7 @@ python evaluate.py
 📊 EVALUATION RESULTS
 ============================================================
 
-🎯 Model: openai/gpt-oss-120b
+🎯 Model: meta-llama/Llama-3.1-70B-Instruct
 📝 Samples: 100
 
 📈 Performance Metrics:
@@ -184,7 +182,7 @@ What genes are essential for cell cycle progression?
 
 4. **Context** → Formats results for LLM
 
-5. **Generate** → GPT-OSS-120B produces:
+5. **Generate** → Llama3.1 70B Instruct produces:
    - Answer (Yes/No)
    - Detailed reasoning
    - Mechanism explanation
@@ -198,11 +196,12 @@ What genes are essential for cell cycle progression?
 
 ```
 VirtualCRISPR/
-├── app.py                      # Main application
-├── save_embeddings.py          # Generate embeddings (run once)
-├── evaluate.py                 # Test model accuracy
+├── scripts/
+    ├── app.py                      # Main application
+    ├── save_embeddings.py          # Generate embeddings (run once)
+    ├── evaluate.py                 # Test model accuracy
+    ├── test_setup.py              # Setup verification
 ├── requirements.txt            # Dependencies
-├── test_setup.py              # Setup verification
 ├── README.md                  # This file
 ├── .gitignore                 # Git ignore rules
 └── data/                      # Your data
@@ -230,7 +229,7 @@ Key insights:
 - Performance varies by model (GPT-4o: F1=0.47, FPR=0.22)
 
 Our implementation uses:
-- **Model:** GPT-OSS-120B (similar family to paper)
+- **Model:** Llama3.1 70B Instruct
 - **RAG:** Semantic search with FAISS
 - **Embeddings:** all-MiniLM-L6-v2
 - **Data:** 150K+ CRISPR-related records
